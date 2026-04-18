@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .prose-custom {
+    @apply prose prose-lg prose-gray max-w-none 
+      prose-headings:font-serif prose-headings:font-bold
+      prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+      prose-img:rounded-xl prose-img:shadow-lg
+      prose-pre:bg-gray-900 prose-pre:text-gray-100
+      prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-gray-50 prose-blockquote:py-1 prose-blockquote:px-4;
+  }
+}
+
+/* React Quill Styles */
+.ql-editor {
+  min-height: 300px !important;
+  font-size: 16px !important;
+}
+
+.ql-container {
+  font-family: var(--font-inter), sans-serif !important;
+}
